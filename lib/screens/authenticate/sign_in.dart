@@ -1,3 +1,4 @@
+import 'package:brew_crew1/models/user.dart';
 import 'package:brew_crew1/services/auth.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +25,7 @@ class _SignInState extends State<SignIn> {
         child: ElevatedButton(
             child: Text('Sign In Anon'),
             onPressed: () async {
-              dynamic result = _auth.signInAnon();
+              BrewUser? result = await _auth.signInAnon();
               if (result == null) {
                 print('Error Signing In');
               } else {
